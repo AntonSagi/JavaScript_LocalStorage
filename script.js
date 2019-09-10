@@ -23,19 +23,23 @@ var btnAdd = document.getElementById("btn");
 btnAdd.addEventListener("click", myClick);
 
 function myClick() {
-    var myInput = document.getElementById("inp").value;
-    var myContent = document.createElement("div");
-    var btnDel = document.createElement("button");
-    btnDel.id = "myDelete";
-    btnDel.innerHTML = "Radera";
-    myContent.innerHTML = myInput;
-    document.body.appendChild(myContent);
-    document.body.appendChild(btnDel);
-    localStorage.setItem("Mitt namn", myInput);
 
-    btnDel.addEventListener("click", function(){
-       localStorage.clear();
-       myContent.remove();
-       btnDel.remove();
-    });
+            var myInput = document.getElementById("inp").value;
+            var myContent = document.createElement("div");
+             var btnDel = document.createElement("button");
+
+            btnDel.id = "myDelete";
+            btnDel.innerHTML = "Radera";
+            myContent.innerHTML = myInput;
+
+            document.body.appendChild(myContent);
+            document.body.appendChild(btnDel);
+
+            localStorage.setItem("Mitt namn", myInput);
+
+                btnDel.addEventListener("click", function(){
+                    localStorage.clear();
+                    myContent.remove();
+                    btnDel.remove();
+                });
 }
